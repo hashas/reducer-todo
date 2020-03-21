@@ -9,6 +9,7 @@ const TodoList = (props) => {
                 return(
                     <Todo 
                         task={todo.item}
+                        key={todo.id}
                     />
                 )
             })}
