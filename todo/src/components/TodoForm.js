@@ -11,6 +11,7 @@ const TodoForm = props => {
                     onChange={(event) => props.handleChange(event)}
                 />
                 <button onClick={() => props.dispatch({ type: 'ADD_TODO', payload: props.value })}>Add Todo</button>
+                <button onClick={() => props.dispatch({ type: 'CLEAR'})}>Clear Completed</button>
             </form>
         </div>
     )
