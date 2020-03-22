@@ -24,11 +24,27 @@ export function reducer(state, action) {
                     completed: false,
                     id: new Date().valueOf()
                 }
-            ]
-            // return state.concat({ item: "hasan", // action.payload event.target.value
+            ]   
+            // alternative method of adding an object to state:
+            // return state.concat({ item: action.payload,
             //                     completed: false,
-            //                     id: new Date().valueOf() // new Date().valueOf()
+            //                     id: new Date().valueOf()
             //  })
+        
+        case 'TOGGLE':
+            return state.map(todo => 
+                // alternative method using conditional rendering
+                // couldn't understand how the spread operator was being used 
+                // action.payload.id === todo.id ? {...todo, completed: !todo.completed} : todo
+                {
+                    if (todo.id === action.payload.id) {
+                        todo.completed = !todo.completed
+                        return todo
+                      } else {
+                        return todo
+                      }
+                }
+            )
         default:
             return state;
     }

@@ -9,7 +9,11 @@ const TodoList = (props) => {
                 return(
                     <Todo 
                         task={todo.item}
-                        key={todo.id}
+                        // key={todo.id}
+                        status={todo.completed}
+                        data={todo}
+                        dispatch={props.dispatch}
+                        handleClick={props.handleClick} // remove this
                     />
                 )
             })}

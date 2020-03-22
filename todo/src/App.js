@@ -19,6 +19,10 @@ function App() {
       setFormData(event.target.value)
   }
 
+  const handleToggle = event => {
+
+  }
+
   console.log(state)
   console.log(formData)
 
@@ -26,6 +30,8 @@ function App() {
     <div className="App">
       <TodoList
         data={state}
+        dispatch={dispatch}
+        handleChange={handleChange}
       />
       <TodoForm 
         dispatch={dispatch}
